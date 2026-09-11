@@ -1,0 +1,525 @@
+{
+  "$schema": "https://totem.local/config.json",
+  "autoupdate": false,
+  "disabled_providers": [
+    "anthropic"
+  ],
+  "plugin": [
+    [
+      "file:///home/nvii/projects/totemic/totem-pole/totempole",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "file:///home/nvii/projects/totemic/totem/totem-log-sanitizer",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "file:///home/nvii/.config/totem/plugins/session-transcript.mjs",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "opencode-mem",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "opencode-pty",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "@tarquinen/opencode-dcp",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "workaholic",
+      {
+        "enabled": false
+      }
+    ],
+    [
+      "opencode-notify",
+      {
+        "enabled": false
+      }
+    ],
+    [
+      "opencode-worktree",
+      {
+        "enabled": true
+      }
+    ],
+    [
+      "opencode-local-ollama",
+      {
+        "enabled": true
+      }
+    ],
+    "opencode-usage-monitor",
+    [
+      "psinetron-opencode-visualizer",
+      {
+        "enabled": false
+      }
+    ],
+    "opencode-froggy",
+    "opencode-beads",
+    "opencode-mystatus",
+    "opencode-token-tracker",
+    "opencode-telemetry",
+    "opencode-history-search",
+    "opencode-plan-manager",
+    "opencode-background-agents",
+    "opencode-adaptive-thinking",
+    [
+      "file:///home/nvii/projects/lolcat-theme/dist/tui.mjs",
+      {
+        "enabled": true
+      }
+    ]
+  ],
+  "compaction": {
+    "reserved": 8000,
+    "tail_turns": 4,
+    "preserve_recent_tokens": 16000
+  },
+  "model": "zai/glm-5.2",
+  "small_model": "zai/glm-4.7-flash",
+  "agent": {
+    "build": {
+      "model": "zai/glm-5.2",
+      "prompt": "You follow the CONSTITUTION rules at all times. Direct, peer-level. Answer what was asked, nothing else. Deliver complete work, no stubs. Corrections are silent — fix and move on. No emotional labeling. No disclaimers, apologies, or ceremonial compliance."
+    },
+    "plan": {
+      "model": "zai/glm-4.7-flash",
+      "prompt": "You follow the CONSTITUTION. Keep plans specific and actionable. No status updates, no emotional observations, no general advice. Answer exactly what was asked."
+    },
+    "orchestrator": {
+      "model": "zai/glm-5.2",
+      "prompt": "You are the Orchestrator. Your role is master orchestration and coordination of complex tasks. You handle multi-step state management, complex triage, intent analysis, and cross-agent coordination.",
+      "subAgents": {
+        "researcher": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Researcher. You perform deep dive investigation, data synthesis, documentation scraping, and exploration-first discovery."
+        },
+        "debugger": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Debugger. You perform non-linear troubleshooting, root cause triangulation, and fix broken loops."
+        },
+        "auditor": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Auditor. You are the final gatekeeper for AI slop detection, security checks, style alignment, and verification against original requirements."
+        }
+      }
+    },
+    "architect": {
+      "model": "zai/glm-5.2",
+      "prompt": "You are the Architect. Your role is systems architecture for high-level design and blueprinting. You handle requirement gathering, product sense, roadmap generation, and transitioning human ideas to technical specs.",
+      "subAgents": {
+        "researcher": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Researcher. You perform deep dive investigation, data synthesis, documentation scraping, and exploration-first discovery."
+        },
+        "auditor": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Auditor. You are the final gatekeeper for AI slop detection, security checks, style alignment, and verification against original requirements."
+        }
+      }
+    },
+    "engineer": {
+      "model": "zai/glm-5.2",
+      "prompt": "You are the Engineer. Your role is implementation specialist for robust, production-ready code. You handle high-fidelity code production, standard adherence, and performance optimization.",
+      "subAgents": {
+        "debugger": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Debugger. You perform non-linear troubleshooting, root cause triangulation, and fix broken loops."
+        },
+        "auditor": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Auditor. You are the final gatekeeper for AI slop detection, security checks, style alignment, and verification against original requirements."
+        }
+      }
+    },
+    "operator": {
+      "model": "zai/glm-5.2",
+      "prompt": "You are the Operator. Your role is systems operator and deployment specialist. You handle deployment scripts, Docker optimization, CI/CD pipelines, environment troubleshooting, and infrastructure management.",
+      "subAgents": {
+        "debugger": {
+          "model": "zai/glm-5.2",
+          "prompt": "You are the Debugger. You perform non-linear troubleshooting, root cause triangulation, and fix broken loops."
+        }
+      }
+    }
+  },
+  "mcp": {
+    "searxng": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-searxng"
+      ],
+      "environment": {
+        "SEARXNG_URL": "http://localhost:8888"
+      },
+      "enabled": false
+    },
+    "flet": {
+      "type": "local",
+      "command": [
+        "/home/nvii/venvs/flet/bin/flet-mcp-server"
+      ],
+      "enabled": false
+    },
+    "zai-search": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer ENV:ZHIPU_API_KEY"
+      }
+    },
+    "zai-reader": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer ENV:ZHIPU_API_KEY"
+      }
+    },
+    "zai-zread": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/zread/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer ENV:ZHIPU_API_KEY"
+      }
+    },
+    "reddit": {
+      "type": "local",
+      "command": [
+        "/home/nvii/.local/npm-global/bin/reddit-mcp-buddy"
+      ],
+      "enabled": false
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "stv": {
+      "type": "remote",
+      "url": "http://127.0.0.1:8801/mcp",
+      "enabled": true
+    },
+    "osm": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--with",
+        "mcp<2",
+        "osm-mcp-server"
+      ],
+      "enabled": false
+    },
+    "geowire": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@geowirehq/mcp"
+      ],
+      "enabled": false
+    },
+    "fetcher": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "fetcher-mcp"
+      ],
+      "enabled": true
+    },
+    "remoteopenclaw": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "remoteopenclaw"
+      ],
+      "enabled": false
+    },
+    "reddit-research": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://mcp.dialog.tools/mcp"
+      ],
+      "enabled": false
+    },
+    "chat-export": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--from",
+        "opencode-chat-export",
+        "--with",
+        "mcp<2",
+        "opencode-chat-export"
+      ],
+      "enabled": true
+    },
+    "github": {
+      "type": "url",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer ***REMOVED***"
+      }
+    }
+  },
+  "provider": {
+    "opencode": {
+      "name": "OpenCode Zen",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://opencode.ai/zen/v1",
+        "apiKey": "ENV:OPENCODE_API_KEY"
+      },
+      "models": {
+        "big-pickle": {
+          "name": "Big Pickle (free)"
+        },
+        "deepseek-v4-flash-free": {
+          "name": "DeepSeek V4 Flash (free)"
+        },
+        "mimo-v2.5-free": {
+          "name": "Mimo v2.5 (free)"
+        },
+        "laguna-s-2.1-free": {
+          "name": "Laguna S 2.1 (free)"
+        },
+        "ling-3.0-flash-free": {
+          "name": "Ling 3.0 Flash (free)"
+        },
+        "north-mini-code-free": {
+          "name": "North Mini Code (free)"
+        },
+        "nemotron-3-ultra-free": {
+          "name": "Nemotron 3 Ultra (free)"
+        },
+        "glm-5.2": {
+          "name": "GLM 5.2"
+        },
+        "glm-5.1": {
+          "name": "GLM 5.1"
+        },
+        "glm-5": {
+          "name": "GLM 5"
+        },
+        "kimi-k2.7-code": {
+          "name": "Kimi K2.7 Code"
+        },
+        "kimi-k3": {
+          "name": "Kimi K3"
+        },
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro"
+        },
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash"
+        },
+        "minimax-m3": {
+          "name": "MiniMax M3"
+        },
+        "grok-4.5": {
+          "name": "Grok 4.5"
+        }
+      }
+    },
+    "ollama": {
+      "name": "Ollama (Tower)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "not-needed",
+        "baseURL": "http://192.0.2.24:11434/v1",
+        "timeout": 1800000,
+        "chunkTimeout": 600000
+      },
+      "models": {
+        "dolphin3:8b": {
+          "name": "Dolphin3 8b"
+        },
+        "agent-gemma4-12b:latest": {
+          "name": "Agent Gemma4 12b"
+        },
+        "agent-llama3.1-8b:latest": {
+          "name": "Agent Llama3.1 8b"
+        },
+        "agent-phi4-14b:latest": {
+          "name": "Agent Phi4 14b"
+        },
+        "agent-gemma4-26b:latest": {
+          "name": "Agent Gemma4 26b"
+        },
+        "agent-deepseek-r1-32b:latest": {
+          "name": "Agent Deepseek R1 32b"
+        },
+        "agent-qwen3.6-27b:latest": {
+          "name": "Agent Qwen3.6 27b"
+        },
+        "gemma4:12b": {
+          "name": "Gemma4"
+        }
+      }
+    },
+    
+    "zai": {
+      "name": "Z.AI (Coding Plan)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://api.z.ai/api/coding/paas/v4",
+        "apiKey": "ENV:ZHIPU_API_KEY",
+        "models": {
+          "zai/glm-5.2": {
+            "name": "GLM-5.2",
+            "limit": {
+              "context": 960000,
+              "output": 32768
+            }
+          },
+          "zai/glm-4.7-flash": {
+            "name": "GLM-4.7 Flash",
+            "limit": {
+              "context": 262000,
+              "output": 8192
+            }
+          }
+        }
+      },
+      "models": {
+        "glm-5.2": {
+          "name": "GLM-5.2 (1M ctx)",
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "glm-5.3": {
+          "name": "GLM-5.3 (1M ctx)",
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "glm-5.1": {
+          "name": "GLM-5.1",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-5": {
+          "name": "GLM-5",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-5-turbo": {
+          "name": "GLM-5 Turbo",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-4.7": {
+          "name": "GLM-4.7",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-4.7-flash": {
+          "name": "GLM-4.7 Flash (FREE)",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-4.7-flashx": {
+          "name": "GLM-4.7 FlashX",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-4.6": {
+          "name": "GLM-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          }
+        },
+        "glm-4.5": {
+          "name": "GLM-4.5",
+          "limit": {
+            "context": 128000,
+            "output": 98304
+          }
+        },
+        "glm-4.5-air": {
+          "name": "GLM-4.5 Air",
+          "limit": {
+            "context": 128000,
+            "output": 98304
+          }
+        },
+        "glm-4.5-airx": {
+          "name": "GLM-4.5 AirX",
+          "limit": {
+            "context": 128000,
+            "output": 98304
+          }
+        },
+        "glm-4.5-flash": {
+          "name": "GLM-4.5 Flash (FREE)",
+          "limit": {
+            "context": 128000,
+            "output": 98304
+          }
+        },
+        "glm-4-32b-0414-128k": {
+          "name": "GLM-4 32B (128K)",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          }
+        }
+      }
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1",
+        "apiKey": "ENV:OPENROUTER_API_KEY"
+      }
+    }
+  },
+  "experimental": {
+    "mcp_timeout": 60000
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/master/dcp.schema.json",
+  "compress": {
+    "modelMaxLimits": {
+      "zai/glm-5.2": 1000000
+    },
+    "protectUserMessages": true
+  }
+}

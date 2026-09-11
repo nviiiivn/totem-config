@@ -1,0 +1,7 @@
+{
+  "apiKey": "ENV:SUPERMEMORY_API_KEY",
+  "autoSave": true,
+  "autoSaveKeywords": ["remember", "save this", "don't forget", "note that"],
+  "compactionThreshold": 0.8,
+  "projectTag": "totem"
+}

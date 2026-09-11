@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-21T03:04:20.695Z",
+  "skills": {
+    "simplify": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "cb65c41304ffbde35e4a66d4881ebf8d9cdb89161594de41e2358e1c14bf2280",
+      "lastManagedHash": "cb65c41304ffbde35e4a66d4881ebf8d9cdb89161594de41e2358e1c14bf2280",
+      "lastSeenHash": "cb65c41304ffbde35e4a66d4881ebf8d9cdb89161594de41e2358e1c14bf2280",
+      "updatedAt": "2026-07-21T03:04:20.690Z"
+    },
+    "codemap": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "126801d87e9ec79b2360654f559dcd6ee3beefe611b38da1139002d727bb801b",
+      "lastManagedHash": "126801d87e9ec79b2360654f559dcd6ee3beefe611b38da1139002d727bb801b",
+      "lastSeenHash": "126801d87e9ec79b2360654f559dcd6ee3beefe611b38da1139002d727bb801b",
+      "updatedAt": "2026-07-21T03:04:20.691Z"
+    },
+    "clonedeps": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "2446eee46b22f68b7e73a619150091c35910b7bfe54ea7b210f7f93db6f33b2f",
+      "lastManagedHash": "2446eee46b22f68b7e73a619150091c35910b7bfe54ea7b210f7f93db6f33b2f",
+      "lastSeenHash": "2446eee46b22f68b7e73a619150091c35910b7bfe54ea7b210f7f93db6f33b2f",
+      "updatedAt": "2026-07-21T03:04:20.692Z"
+    },
+    "deepwork": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "b3d228a1c5578c02e82a0eb4cb7eadcd3075d6e832e73a0dfb6421135d6d35ec",
+      "lastManagedHash": "b3d228a1c5578c02e82a0eb4cb7eadcd3075d6e832e73a0dfb6421135d6d35ec",
+      "lastSeenHash": "b3d228a1c5578c02e82a0eb4cb7eadcd3075d6e832e73a0dfb6421135d6d35ec",
+      "updatedAt": "2026-07-21T03:04:20.693Z"
+    },
+    "reflect": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "fe154b6fb69032fe745466828eb448175d205e1414dd12f0dd64f07b4f6d4f5c",
+      "lastManagedHash": "fe154b6fb69032fe745466828eb448175d205e1414dd12f0dd64f07b4f6d4f5c",
+      "lastSeenHash": "fe154b6fb69032fe745466828eb448175d205e1414dd12f0dd64f07b4f6d4f5c",
+      "updatedAt": "2026-07-21T03:04:20.694Z"
+    },
+    "totempole": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "cebfd911045cef74c23eb482e63f03fd5f716fb54a600e425fa47d9837f13680",
+      "lastManagedHash": "cebfd911045cef74c23eb482e63f03fd5f716fb54a600e425fa47d9837f13680",
+      "lastSeenHash": "cebfd911045cef74c23eb482e63f03fd5f716fb54a600e425fa47d9837f13680",
+      "updatedAt": "2026-07-21T03:04:20.694Z"
+    },
+    "release-smoke-test": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "dcaa8f37c68ade0b626cdcb523ec278d0dbeaa76c3c4146e5ce933c062a301c9",
+      "lastManagedHash": "dcaa8f37c68ade0b626cdcb523ec278d0dbeaa76c3c4146e5ce933c062a301c9",
+      "lastSeenHash": "dcaa8f37c68ade0b626cdcb523ec278d0dbeaa76c3c4146e5ce933c062a301c9",
+      "updatedAt": "2026-07-21T03:04:20.694Z"
+    },
+    "worktrees": {
+      "status": "managed",
+      "packageVersion": "2.1.0",
+      "sourceHash": "bb8b978a5b986302820252240b27c8887c4359ea56aadef3de3f0d096b677010",
+      "lastManagedHash": "bb8b978a5b986302820252240b27c8887c4359ea56aadef3de3f0d096b677010",
+      "lastSeenHash": "bb8b978a5b986302820252240b27c8887c4359ea56aadef3de3f0d096b677010",
+      "updatedAt": "2026-07-21T03:04:20.695Z"
+    }
+  }
+}

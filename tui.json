@@ -1,0 +1,17 @@
+{
+  "plugin": [
+    "opencode-usage-monitor",
+    [
+      "psinetron-opencode-visualizer",
+      {
+        "enabled": false
+      }
+    ],
+    [
+      "opencode-cache-stats",
+      {
+        "enabled": true
+      }
+    ]
+  ]
+}
